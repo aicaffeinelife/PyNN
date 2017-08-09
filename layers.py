@@ -6,7 +6,12 @@ def softmax(x):
 	y = np.exp(x)/np.sum(np.exp(x),axis=1, keepdims=True)
 	return y
 
+def sigmoid(x):
+	return 1./(1.+np.exp(x))
 
+def sigmoid_back(x):
+	return sigmoid(x)*sigmoid(1-x)
+	
 
 def affine_forward(X,w,b):
 	"""
